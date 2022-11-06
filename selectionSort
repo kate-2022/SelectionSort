@@ -1,0 +1,45 @@
+public class SelectionSort {
+		
+	public static void sort(int[] elements) {
+    int length = elements.length;
+
+    for (int i = 0; i < length - 1; i++) {
+
+
+      int minPos = i;
+      int min = elements[minPos];
+      for (int j = i + 1; j < length; j++) {
+        if (elements[j] < min) {
+          minPos = j;
+          min = elements[minPos];
+        }
+      }
+
+      if (minPos != i) {
+        elements[minPos] = elements[i];
+        elements[i] = min;
+      }
+    }
+  }	
+
+}
+
+
+import java.util.Arrays;
+
+public class SelSortmain {
+
+	public static void main(String[] args) {
+	
+		int [] arr = {5, 2, 7, 39, 13, 22};
+		
+		System.out.println(("Unsorted array: " ));
+		System.out.println(Arrays.toString(arr));
+		
+		SelectionSort.sort(arr);
+		System.out.println(("Sorted array: " ));
+		System.out.println(Arrays.toString(arr));
+
+	}
+
+}
